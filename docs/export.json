@@ -1,0 +1,21 @@
+{
+    "export": "node-sequelize",
+    "zip": false,
+    "dir": ".\\model",
+    "params": {
+        "logToConsole": false,
+        "logFile": "",
+        "filename": "%entity%.%extension%",
+        "indentation": 4,
+        "useTabs": false,
+        "eolDelimeter": "win",
+        "backupExistingFile": true,
+        "addGeneratorInfoAsComment": true,
+        "skipPluralNameChecking": false,
+        "useLoggedStorage": false,
+        "sortTablesAndViews": true,
+        "exportOnlyTableCategorized": "",
+        "enhanceManyToManyDetection": true,
+        "skipManyToManyTables": true
+    }
+}
