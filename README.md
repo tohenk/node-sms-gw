@@ -7,6 +7,9 @@ Node SMS Gateway App provides an easy way to deploy SMS Gateway which includes
 [gateway](https://github.com/tohenk/node-sms-gateway). Each terminal and gateway
 can be deployed in separate host.
 
+Node SMS Gateway App is a pure SMS gateway implementation that doesn't requires
+or depends to any external SMS gateway service or library.
+
 ## Requirement
 
 - [Nodejs](https://nodejs.org/) version 8.11.3 or higher. If you're using Linux
