@@ -104,11 +104,10 @@ $ sudo chown -vR nodejs config logs sessions
 To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
 
 ```
-$ cd ~
-$ wget https://github.com/tohenk/node-sms-gw/blob/master/service/linux/node-sms-terminal
-$ chmod +x node-sms-terminal
-$ vi node-sms-terminal
-$ sudo cp node-sms-terminal /etc/init.d/
+$ cd ~/node-sms-gw
+$ chmod +x service/linux/node-sms-terminal
+$ vi service/linux/node-sms-terminal
+$ sudo cp service/linux/node-sms-terminal /etc/init.d/
 $ sudo update-rc.d node-sms-terminal defaults
 $ systemctl daemon-reload
 ```
@@ -124,11 +123,10 @@ $ systemctl start node-sms-terminal
 To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
 
 ```
-$ cd ~
-$ wget https://github.com/tohenk/node-sms-gw/blob/master/service/linux/node-sms-gateway
-$ chmod +x node-sms-gateway
-$ vi node-sms-gateway
-$ sudo cp node-sms-gateway /etc/init.d/
+$ cd ~/node-sms-gw
+$ chmod +x service/linux/node-sms-gateway
+$ vi service/linux/node-sms-gateway
+$ sudo cp service/linux/node-sms-gateway /etc/init.d/
 $ sudo update-rc.d node-sms-gateway defaults
 $ systemctl daemon-reload
 ```
