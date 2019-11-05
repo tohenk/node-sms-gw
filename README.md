@@ -93,6 +93,12 @@ $ mkdir -p sessions
 $ sudo chown -vR nodejs config logs sessions
 ```
 
+It is necessary to add `nodejs` user to `dialout` group to be able to use modem port.
+
+```
+$ sudo adduser nodejs dialout
+```
+
 ## Configuration
 
 - Follow Node SMS Terminal configuration [here](https://github.com/tohenk/node-sms-terminal/blob/master/README.md#configuration).
