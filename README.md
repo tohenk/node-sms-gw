@@ -108,15 +108,48 @@ $ sudo adduser nodejs dialout
 
 ### Linux
 
-#### Node SMS Terminal service
+#### Using systemd
 
 To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
 
 ```
 $ cd ~/node-sms-gw
-$ chmod +x service/linux/node-sms-terminal
-$ vi service/linux/node-sms-terminal
-$ sudo cp service/linux/node-sms-terminal /etc/init.d/
+$ vi service/linux/systemd/node-sms-terminal.service
+$ sudo cp service/linux/systemd/node-sms-terminal.service /etc/systemd/system/
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable node-sms-terminal.service
+```
+
+And finally, to start Node SMS Terminal issue:
+
+```
+$ systemctl start node-sms-terminal
+```
+
+To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
+
+```
+$ vi service/linux/systemd/node-sms-gateway.service
+$ sudo cp service/linux/systemd/node-sms-gateway.service /etc/systemd/system/
+$ sudo systemctl daemon-reload
+$ sudo systemctl enable node-sms-gateway.service
+```
+
+And finally, to start Node SMS Gateway issue:
+
+```
+$ systemctl start node-sms-gateway
+```
+
+#### Using init.d
+
+To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
+
+```
+$ cd ~/node-sms-gw
+$ chmod +x service/linux/init.d/node-sms-terminal
+$ vi service/linux/init.d/node-sms-terminal
+$ sudo cp service/linux/init.d/node-sms-terminal /etc/init.d/
 $ sudo update-rc.d node-sms-terminal defaults
 $ systemctl daemon-reload
 ```
@@ -127,15 +160,13 @@ And finally, to start Node SMS Terminal issue:
 $ systemctl start node-sms-terminal
 ```
 
-#### Node SMS Gateway service
-
 To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
 
 ```
 $ cd ~/node-sms-gw
-$ chmod +x service/linux/node-sms-gateway
-$ vi service/linux/node-sms-gateway
-$ sudo cp service/linux/node-sms-gateway /etc/init.d/
+$ chmod +x service/linux/init.d/node-sms-gateway
+$ vi service/linux/init.d/node-sms-gateway
+$ sudo cp service/linux/init.d/node-sms-gateway /etc/init.d/
 $ sudo update-rc.d node-sms-gateway defaults
 $ systemctl daemon-reload
 ```

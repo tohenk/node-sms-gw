@@ -1,0 +1,12 @@
+[Unit]
+Description=Node SMS Gateway
+After=mysql.service
+
+[Service]
+WorkingDirectory=/home/nodeapp/node-sms-gw/gateway
+ExecStart=/usr/bin/node app.js
+User=nodejs
+Group=nodejs
+
+[Install]
+WantedBy=multi-user.target
