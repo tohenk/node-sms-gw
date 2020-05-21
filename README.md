@@ -129,6 +129,7 @@ $ systemctl start node-sms-terminal
 To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
 
 ```
+$ cd ~/node-sms-gw
 $ vi service/linux/systemd/node-sms-gateway.service
 $ sudo cp service/linux/systemd/node-sms-gateway.service /etc/systemd/system/
 $ sudo systemctl daemon-reload
