@@ -30,29 +30,29 @@ $ cd ~
 $ git clone https://github.com/tohenk/node-sms-gw.git
 ```
 
-### Initialize Node SMS Terminal source tree
+### Initialize Node SMS Terminal and Node SMS Gateway source tree
 
 ```
 $ cd ~/node-sms-gw
-$ git submodule init --merge --remote -- terminal
-$ cd ~/node-sms-gw/terminal
-$ git submodule init --merge --remote -- ui/lib/script
-$ git submodule init --merge --remote -- ui/public/js
+$ git submodule update --init --recursive --merge --remote -- terminal
+$ git submodule update --init --recursive --merge --remote -- gateway
 ```
 
-### Initialize Node SMS Gateway source tree
-
+In case of the above recursive sub module init doesn't work, you must manually
+update the sub modules:
 ```
 $ cd ~/node-sms-gw
-$ git submodule init --merge --remote -- gateway
-$ cd ~/node-sms-gw/gateway
-$ git submodule init --merge --remote -- ui/lib/script
-$ git submodule init --merge --remote -- ui/public/js
+$ git submodule update --init --merge --remote -- terminal/lib
+$ git submodule update --init --merge --remote -- terminal/ui/lib
+$ git submodule update --init --merge --remote -- terminal/ui/lib/script
+$ git submodule update --init --merge --remote -- terminal/ui/public/js
+$ git submodule update --init --merge --remote -- gateway/lib
+$ git submodule update --init --merge --remote -- gateway/ui/lib
+$ git submodule update --init --merge --remote -- gateway/ui/lib/script
+$ git submodule update --init --merge --remote -- gateway/ui/public/js
 ```
 
-> For updating, replace `git submodule init` command with
-> `git submodule update` for both Node SMS Terminal source tree and
-> Node SMS Gateway source tree.
+> For updating, omit `--init` option for each command of `git submodule update`.
 
 ## Preparation
 
