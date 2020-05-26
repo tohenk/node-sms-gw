@@ -4,7 +4,7 @@ After=mysql.service
 
 [Service]
 WorkingDirectory=/home/nodeapp/node-sms-gw/gateway
-ExecStart=/usr/bin/node app.js
+ExecStart=/usr/bin/node app.js --plugins=prepaid
 User=nodejs
 Group=nodejs
 

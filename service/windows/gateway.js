@@ -38,7 +38,8 @@ function service(cmd) {
     const svc = new Service({
         name: 'NodeSMSGateway',
         description: 'Node SMS Gateway',
-        script: app
+        script: app,
+        scriptOptions: '--plugins=prepaid'
     });
     svc.on('install', () => {
         svc.start();
