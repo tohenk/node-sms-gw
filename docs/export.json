@@ -1,5 +1,5 @@
 {
-    "export": "node-sequelize",
+    "export": "node-sequelize6",
     "zip": false,
     "dir": ".\\model",
     "params": {
