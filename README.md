@@ -30,29 +30,12 @@ $ cd ~
 $ git clone https://github.com/tohenk/node-sms-gw.git
 ```
 
-### Initialize Node SMS Terminal and Node SMS Gateway source tree
+### Install npm dependencies
 
 ```
 $ cd ~/node-sms-gw
-$ git submodule update --init --recursive --merge --remote -- terminal
-$ git submodule update --init --recursive --merge --remote -- gateway
+$ npm update
 ```
-
-In case of the above recursive sub module init doesn't work, you must manually
-update the sub modules:
-```
-$ cd ~/node-sms-gw
-$ git submodule update --init --merge --remote -- terminal/lib
-$ git submodule update --init --merge --remote -- terminal/ui/lib
-$ git submodule update --init --merge --remote -- terminal/ui/lib/script
-$ git submodule update --init --merge --remote -- terminal/ui/public/js
-$ git submodule update --init --merge --remote -- gateway/lib
-$ git submodule update --init --merge --remote -- gateway/ui/lib
-$ git submodule update --init --merge --remote -- gateway/ui/lib/script
-$ git submodule update --init --merge --remote -- gateway/ui/public/js
-```
-
-> For updating, omit `--init` option for each command of `git submodule update`.
 
 ## Preparation
 
@@ -83,14 +66,9 @@ and give write access to required files and folders.
 
 ```
 $ sudo adduser --system --no-create-home --disabled-login nodejs
-
-$ cd ~/node-sms-gw/terminal
-$ mkdir -p sessions
-$ sudo chown -vR nodejs logs sessions msgref.json
-
-$ cd ~/node-sms-gw/gateway
-$ mkdir -p sessions
-$ sudo chown -vR nodejs config logs sessions
+$ cd ~/node-sms-gw
+$ cp node_modules/@ntlab/sms-terminal/msgref.json .
+$ sudo chown -vR nodejs config data logs sessions msgref.json
 ```
 
 It is necessary to add `nodejs` user to `dialout` group to be able to use modem port.
@@ -107,8 +85,6 @@ $ sudo adduser nodejs dialout
 ## Creating services
 
 ### Linux
-
-#### Using systemd
 
 To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
 
@@ -134,42 +110,6 @@ $ vi service/linux/systemd/node-sms-gateway.service
 $ sudo cp service/linux/systemd/node-sms-gateway.service /etc/systemd/system/
 $ sudo systemctl daemon-reload
 $ sudo systemctl enable node-sms-gateway.service
-```
-
-And finally, to start Node SMS Gateway issue:
-
-```
-$ systemctl start node-sms-gateway
-```
-
-#### Using init.d
-
-To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
-
-```
-$ cd ~/node-sms-gw
-$ chmod +x service/linux/init.d/node-sms-terminal
-$ vi service/linux/init.d/node-sms-terminal
-$ sudo cp service/linux/init.d/node-sms-terminal /etc/init.d/
-$ sudo update-rc.d node-sms-terminal defaults
-$ systemctl daemon-reload
-```
-
-And finally, to start Node SMS Terminal issue:
-
-```
-$ systemctl start node-sms-terminal
-```
-
-To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
-
-```
-$ cd ~/node-sms-gw
-$ chmod +x service/linux/init.d/node-sms-gateway
-$ vi service/linux/init.d/node-sms-gateway
-$ sudo cp service/linux/init.d/node-sms-gateway /etc/init.d/
-$ sudo update-rc.d node-sms-gateway defaults
-$ systemctl daemon-reload
 ```
 
 And finally, to start Node SMS Gateway issue:
