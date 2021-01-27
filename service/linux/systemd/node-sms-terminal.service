@@ -3,8 +3,8 @@ Description=Node SMS Terminal
 After=mysql.service
 
 [Service]
-WorkingDirectory=/home/nodeapp/node-sms-gw/terminal
-ExecStart=/usr/bin/node app.js --auto
+WorkingDirectory=/home/nodeapp/node-sms-gw
+ExecStart=/usr/bin/node node_modules/@ntlab/sms-terminal/app.js --config=cfg-terminal.json --auto
 User=nodejs
 Group=nodejs
 

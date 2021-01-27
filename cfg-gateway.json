@@ -1,0 +1,15 @@
+{
+    "workdir": ".",
+    "secret": "CHANGEME",
+    "security": {
+        "username": "admin",
+        "password": "admin"
+    },
+    "pools": [
+        {
+            "name": "localhost",
+            "url": "http://localhost:8000",
+            "key": "CHANGEME"
+        }
+    ]
+}

@@ -33,12 +33,14 @@ function service(cmd) {
     const fs = require('fs');
     const path = require('path');
     const Service = require('node-windows').Service;
-    const dir = fs.realpathSync(path.join(__dirname, '..', '..', 'terminal'));
-    const app = path.join(dir, 'app.js');
+    const dir = fs.realpathSync(path.join(__dirname, '..', '..'));
+    const app = path.join(dir, 'node_modules', '@ntlab', 'sms-terminal', 'app.js');
+    const config = path.join(dir, 'cfg-terminal.json');
     const svc = new Service({
         name: 'NodeSMSTerminal',
         description: 'Node SMS Terminal',
-        script: app
+        script: app,
+        scriptOptions: '--config="' + config + '" --auto'
     });
     svc.on('install', () => {
         svc.start();

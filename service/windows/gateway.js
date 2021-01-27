@@ -33,13 +33,14 @@ function service(cmd) {
     const fs = require('fs');
     const path = require('path');
     const Service = require('node-windows').Service;
-    const dir = fs.realpathSync(path.join(__dirname, '..', '..', 'gateway'));
-    const app = path.join(dir, 'app.js');
+    const dir = fs.realpathSync(path.join(__dirname, '..', '..'));
+    const app = path.join(dir, 'node_modules', '@ntlab', 'sms-gateway', 'app.js');
+    const config = path.join(dir, 'cfg-gateway.json');
     const svc = new Service({
         name: 'NodeSMSGateway',
         description: 'Node SMS Gateway',
         script: app,
-        scriptOptions: '--plugins=prepaid'
+        scriptOptions: '--config="' + config + '" --plugins=prepaid'
     });
     svc.on('install', () => {
         svc.start();

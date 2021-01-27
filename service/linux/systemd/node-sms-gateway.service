@@ -3,8 +3,8 @@ Description=Node SMS Gateway
 After=mysql.service
 
 [Service]
-WorkingDirectory=/home/nodeapp/node-sms-gw/gateway
-ExecStart=/usr/bin/node app.js --plugins=prepaid
+WorkingDirectory=/home/nodeapp/node-sms-gw
+ExecStart=/usr/bin/node node_modules/@ntlab/sms-gateway/app.js --config=cfg-gateway.json --plugins=prepaid
 User=nodejs
 Group=nodejs
 
