@@ -6,8 +6,8 @@
     "doc": "docs"
   },
   "dependencies": {
-    "@ntlab/sms-gateway": "^1.0.3",
-    "@ntlab/sms-terminal": "^1.0.3"
+    "@ntlab/sms-gateway": "^1.0.4",
+    "@ntlab/sms-terminal": "^1.0.4"
   },
   "devDependencies": {},
   "scripts": {
