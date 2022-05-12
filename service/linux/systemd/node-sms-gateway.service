@@ -4,7 +4,9 @@ After=mysql.service
 
 [Service]
 WorkingDirectory=/home/nodeapp/node-sms-gw
-ExecStart=/usr/bin/node node_modules/@ntlab/sms-gateway/app.js --config=cfg-gateway.json --plugins=prepaid
+ExecStart=/usr/bin/node node_modules/@ntlab/sms-gateway/app.js \
+  --config=cfg-gateway.json \
+  --plugins=@ntlab/sms-gateway-prepaid
 User=nodejs
 Group=nodejs
 

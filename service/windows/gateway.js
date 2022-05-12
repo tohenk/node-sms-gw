@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (c) 2018 Toha <tohenk@yahoo.com>
+ * Copyright (c) 2018-2022 Toha <tohenk@yahoo.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -40,7 +40,7 @@ function service(cmd) {
         name: 'NodeSMSGateway',
         description: 'Node SMS Gateway',
         script: app,
-        scriptOptions: '--config="' + config + '" --plugins=prepaid'
+        scriptOptions: '--config="' + config + '" --plugins=@ntlab/sms-gateway-prepaid'
     });
     svc.on('install', () => {
         svc.start();

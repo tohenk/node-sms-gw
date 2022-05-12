@@ -1,15 +1,10 @@
 {
   "name": "@ntlab/sms-gw",
-  "version": "1.0.0",
-  "description": "Node SMS Gateway App",
+  "version": "2.0.0",
+  "description": "SMS Gateway App",
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {
-    "@ntlab/sms-gateway": "^1.0.4",
-    "@ntlab/sms-terminal": "^1.0.4"
-  },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -27,5 +22,12 @@
     "sms",
     "gateway",
     "terminal"
-  ]
+  ],
+  "dependencies": {
+    "@ntlab/sms-gateway": "^2.0.0",
+    "@ntlab/sms-gateway-prepaid": "^2.0.0",
+    "@ntlab/sms-gateway-ui": "^2.0.1",
+    "@ntlab/sms-terminal": "^2.0.1",
+    "@ntlab/sms-terminal-ui": "^2.0.1"
+  }
 }

@@ -21,7 +21,7 @@ or depends to any external SMS gateway service or library.
 
 ## Installation
 
-Installation is available via GIT.
+Installation is available using GIT.
 
 ### Clone Node SMS Gateway App
 
@@ -34,7 +34,7 @@ $ git clone https://github.com/tohenk/node-sms-gw.git
 
 ```
 $ cd ~/node-sms-gw
-$ npm update
+$ npm install
 ```
 
 ## Preparation
