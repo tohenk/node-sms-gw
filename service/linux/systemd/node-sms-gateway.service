@@ -1,14 +1,18 @@
 [Unit]
 Description=Node SMS Gateway
 After=mysql.service
+StartLimitBurst=5
+StartLimitIntervalSec=500
 
 [Service]
 WorkingDirectory=/home/nodeapp/node-sms-gw
 ExecStart=/usr/bin/node node_modules/@ntlab/sms-gateway/app.js \
-  --config=cfg-gateway.json \
+  --config=gw.json \
   --plugins=@ntlab/sms-gateway-prepaid
 User=nodejs
 Group=nodejs
+Restart=on-failure
+RestartSec=30s
 
 [Install]
 WantedBy=multi-user.target

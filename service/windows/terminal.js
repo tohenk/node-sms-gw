@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  *
- * Copyright (c) 2018-2022 Toha <tohenk@yahoo.com>
+ * Copyright (c) 2018-2023 Toha <tohenk@yahoo.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -35,7 +35,7 @@ function service(cmd) {
     const Service = require('node-windows').Service;
     const dir = fs.realpathSync(path.join(__dirname, '..', '..'));
     const app = path.join(dir, 'node_modules', '@ntlab', 'sms-terminal', 'app.js');
-    const config = path.join(dir, 'cfg-terminal.json');
+    const config = path.join(dir, 'term.json');
     const svc = new Service({
         name: 'NodeSMSTerminal',
         description: 'Node SMS Terminal',
