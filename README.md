@@ -25,16 +25,16 @@ Installation is available using GIT.
 
 ### Clone Node SMS Gateway App
 
-```
-$ cd ~
-$ git clone https://github.com/tohenk/node-sms-gw.git
+```sh
+cd ~
+git clone https://github.com/tohenk/node-sms-gw.git
 ```
 
 ### Install npm dependencies
 
-```
-$ cd ~/node-sms-gw
-$ npm install
+```sh
+cd ~/node-sms-gw
+npm install
 ```
 
 ## Preparation
@@ -44,15 +44,15 @@ so.
 
 ### Creating MySQL schema
 
-```
-$ cd ~/node-sms-gw
-$ mysql -u root -p < docs/smsgw.sql
+```sh
+cd ~/node-sms-gw
+mysql -u root -p < docs/smsgw.sql
 ```
 
 ### Adding MySQL user
 
-```
-$ mysql -u root -p
+```sh
+mysql -u root -p
 mysql> grant all privileges on 'smsgw'.'*' to 'user'@'%' identified by 'password';
 mysql> exit
 ```
@@ -64,17 +64,17 @@ mysql> exit
 If you're using Linux box, it is recommended to run services as separate user
 and give write access to required files and folders.
 
-```
-$ sudo adduser --system --no-create-home --disabled-login nodejs
-$ cd ~/node-sms-gw
-$ cp node_modules/@ntlab/sms-terminal/msgref.json .
-$ sudo chown -vR nodejs config data logs sessions msgref.json
+```sh
+sudo adduser --system --no-create-home --disabled-login --group nodejs
+cd ~/node-sms-gw
+cp node_modules/@ntlab/sms-terminal/msgref.json .
+sudo chown -vR nodejs config data logs sessions msgref.json
 ```
 
 It is necessary to add `nodejs` user to `dialout` group to be able to use modem port.
 
-```
-$ sudo adduser nodejs dialout
+```sh
+sudo adduser nodejs dialout
 ```
 
 ## Configuration
@@ -88,34 +88,34 @@ $ sudo adduser nodejs dialout
 
 To install Node SMS Terminal as service, follow this commands. Adjust the path as needed.
 
-```
-$ cd ~/node-sms-gw
-$ vi service/linux/systemd/node-sms-terminal.service
-$ sudo cp service/linux/systemd/node-sms-terminal.service /etc/systemd/system/
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable node-sms-terminal.service
+```sh
+cd ~/node-sms-gw
+vi service/linux/systemd/node-sms-terminal.service
+sudo cp service/linux/systemd/node-sms-terminal.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable node-sms-terminal.service
 ```
 
 And finally, to start Node SMS Terminal issue:
 
-```
-$ systemctl start node-sms-terminal
+```sh
+systemctl start node-sms-terminal
 ```
 
 To install Node SMS Gateway as service, follow this commands. Adjust the path as needed.
 
-```
-$ cd ~/node-sms-gw
-$ vi service/linux/systemd/node-sms-gateway.service
-$ sudo cp service/linux/systemd/node-sms-gateway.service /etc/systemd/system/
-$ sudo systemctl daemon-reload
-$ sudo systemctl enable node-sms-gateway.service
+```sh
+cd ~/node-sms-gw
+vi service/linux/systemd/node-sms-gateway.service
+sudo cp service/linux/systemd/node-sms-gateway.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable node-sms-gateway.service
 ```
 
 And finally, to start Node SMS Gateway issue:
 
-```
-$ systemctl start node-sms-gateway
+```sh
+systemctl start node-sms-gateway
 ```
 
 ### Windows
@@ -124,30 +124,28 @@ Windows service functionality currently handled by
 [node-windows](https://github.com/coreybutler/node-windows). To install
 `node-windows` follow this step:
 
-```
-> cd path\to\node-sms-gw
-> npm install node-windows --global
-> npm link node-windows
+```sh
+cd path\to\node-sms-gw
+npm install node-windows --global
+npm link node-windows
 ```
 
 #### Node SMS Terminal service
 
 Execute following commands in the Administrator Command Prompt:
 
-```
-> cd path\to\node-sms-gw
-> node service\windows\terminal.js install
-
-> net start nodesmsterminal.exe
+```sh
+cd path\to\node-sms-gw
+node service\windows\terminal.js install
+net start nodesmsterminal.exe
 ```
 
 #### Node SMS Gateway service
 
 Execute following commands in the Administrator Command Prompt:
 
-```
-> cd path\to\node-sms-gw
-> node service\windows\gateway.js install
-
-> net start nodesmsgateway.exe
+```sh
+cd path\to\node-sms-gw
+node service\windows\gateway.js install
+net start nodesmsgateway.exe
 ```
