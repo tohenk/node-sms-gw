@@ -1,6 +1,6 @@
 {
   "name": "@ntlab/sms-gw",
-  "version": "2.0.4",
+  "version": "3.0.0",
   "description": "SMS Gateway App",
   "directories": {
     "doc": "docs"
@@ -24,10 +24,10 @@
     "terminal"
   ],
   "dependencies": {
-    "@ntlab/sms-gateway": "^2.0.6",
+    "@ntlab/sms-gateway": "^3.0.1",
     "@ntlab/sms-gateway-prepaid": "^2.0.3",
-    "@ntlab/sms-gateway-ui": "^2.0.13",
-    "@ntlab/sms-terminal": "^2.0.7",
-    "@ntlab/sms-terminal-ui": "^2.0.11"
+    "@ntlab/sms-gateway-ui": "^3.0.0",
+    "@ntlab/sms-terminal": "^3.0.0",
+    "@ntlab/sms-terminal-ui": "^3.0.0"
   }
 }
