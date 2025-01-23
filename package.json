@@ -24,10 +24,10 @@
     "terminal"
   ],
   "dependencies": {
-    "@ntlab/sms-gateway": "^3.1.0",
-    "@ntlab/sms-gateway-prepaid": "^3.0.1",
-    "@ntlab/sms-gateway-ui": "^3.1.6",
-    "@ntlab/sms-terminal": "^3.2.0",
-    "@ntlab/sms-terminal-ui": "^3.2.1"
+    "@ntlab/sms-gateway": "^3.2.0",
+    "@ntlab/sms-gateway-prepaid": "^3.1.1",
+    "@ntlab/sms-gateway-ui": "^3.2.0",
+    "@ntlab/sms-terminal": "^3.2.2",
+    "@ntlab/sms-terminal-ui": "^3.2.3"
   }
 }
