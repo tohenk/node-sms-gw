@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tohenk/node-sms-gw.git"
+    "url": "git+https://github.com/tohenk/node-sms-gw.git"
   },
   "author": "Toha <tohenk@yahoo.com>",
   "license": "MIT",
@@ -24,10 +24,13 @@
     "terminal"
   ],
   "dependencies": {
-    "@ntlab/sms-gateway": "^3.2.0",
+    "@ntlab/sms-gateway": "^3.2.3",
     "@ntlab/sms-gateway-prepaid": "^3.1.1",
-    "@ntlab/sms-gateway-ui": "^3.2.0",
-    "@ntlab/sms-terminal": "^3.2.2",
-    "@ntlab/sms-terminal-ui": "^3.2.3"
+    "@ntlab/sms-gateway-ui": "^3.8.0",
+    "@ntlab/sms-terminal": "^3.2.4",
+    "@ntlab/sms-terminal-ui": "^3.7.1"
+  },
+  "allowScripts": {
+    "@serialport/bindings-cpp@13.0.0": true
   }
 }
