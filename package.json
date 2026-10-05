@@ -26,9 +26,9 @@
   "dependencies": {
     "@ntlab/sms-gateway": "^3.2.3",
     "@ntlab/sms-gateway-prepaid": "^3.1.1",
-    "@ntlab/sms-gateway-ui": "^3.8.0",
-    "@ntlab/sms-terminal": "^3.2.4",
-    "@ntlab/sms-terminal-ui": "^3.7.1"
+    "@ntlab/sms-gateway-ui": "^3.9.0",
+    "@ntlab/sms-terminal": "^3.2.5",
+    "@ntlab/sms-terminal-ui": "^3.8.0"
   },
   "allowScripts": {
     "@serialport/bindings-cpp@13.0.0": true
